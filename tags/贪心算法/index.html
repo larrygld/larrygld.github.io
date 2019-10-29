@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>每日一题--取石子 | Larry的博客</title>
+  <title>Tag: 贪心算法 | Larry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="67.取石头 (15分)C时间限制：3000 毫秒 |  C内存限制：3000 Kb题目内容：有一堆石子，A，B两人轮流从中取出石子，每次取出的石子数目只能为1，3，7或8，最后一枚石子谁取到就是输方。A,B两人都足够聪明，不会做出错误的判断。现给出一定数目的石子，A先取石子，计算A最终是输是赢，赢1表示，输用0表示.输入描述第一行为一个整数n(0&amp;lt; n &amp;lt;=100),表示玩n局，">
-<meta name="keywords" content="算法,每日一题">
-<meta property="og:type" content="article">
-<meta property="og:title" content="每日一题--取石子">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;26&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8F%96%E7%9F%B3%E5%AD%90&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Larry的博客">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="Larry的博客">
-<meta property="og:description" content="67.取石头 (15分)C时间限制：3000 毫秒 |  C内存限制：3000 Kb题目内容：有一堆石子，A，B两人轮流从中取出石子，每次取出的石子数目只能为1，3，7或8，最后一枚石子谁取到就是输方。A,B两人都足够聪明，不会做出错误的判断。现给出一定数目的石子，A先取石子，计算A最终是输是赢，赢1表示，输用0表示.输入描述第一行为一个整数n(0&amp;lt; n &amp;lt;=100),表示玩n局，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-26T12:59:25.318Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -145,200 +141,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-每日一题-取石子" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      每日一题--取石子
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/10/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%89%BE%E9%9B%B6%E9%92%B1/" class="archive-article-date">
+  	<time datetime="2019-10-29T08:51:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/10/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%89%BE%E9%9B%B6%E9%92%B1/">每日一题--找零钱</a>
     </h1>
   
 
-        
-        <a href="/2019/10/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8F%96%E7%9F%B3%E5%AD%90/" class="archive-article-date">
-  	<time datetime="2019-10-26T12:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p> 67.取石头 (15分)<br>C时间限制：3000 毫秒 |  C内存限制：3000 Kb<br>题目内容：<br>有一堆石子，A，B两人轮流从中取出石子，每次取出的石子数目只能为1，3，7或8，最后一枚石子谁取到就是输方。<br>A,B两人都足够聪明，不会做出错误的判断。现给出一定数目的石子，A先取石子，计算A最终是输是赢，赢1表示，输用0表示.输入描述第一行为一个整数n(0&lt; n &lt;=100),表示玩n局，接下来n行每行有一个整数，表示对应的局提供的石子数（不大于10000），<br>输出描述<br>编程输出A对应的n局是赢是输，赢输出1，输输出0.<br>输入样例<br>3<br>1<br>3<br>10<br>输出样例<br>0<br>0<br>1</p>
-<a id="more"></a>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">10001</span>], b[<span class="number">101</span>], res[<span class="number">101</span>], n, i, j, max;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	a[<span class="number">9</span>] = <span class="number">1</span>;</span><br><span class="line">	a[<span class="number">8</span>] = <span class="number">1</span>;</span><br><span class="line">	a[<span class="number">7</span>] = <span class="number">1</span>;</span><br><span class="line">	a[<span class="number">6</span>] = <span class="number">1</span>;</span><br><span class="line">	a[<span class="number">5</span>] = <span class="number">0</span>;</span><br><span class="line">	a[<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">	a[<span class="number">3</span>] = <span class="number">0</span>;</span><br><span class="line">	a[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">	a[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b[i]);</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	max = b[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(max &lt; b[i])&#123;</span><br><span class="line">			max = b[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line"><span class="comment">//	printf("%d\n", max);</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(j = <span class="number">10</span>; j &lt;= max; j++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[j - <span class="number">1</span>] == <span class="number">0</span> || a[j - <span class="number">3</span>] == <span class="number">0</span> || a[j - <span class="number">7</span>] == <span class="number">0</span> || a[j - <span class="number">8</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">			a[j] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//			printf("------");</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			a[j] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a[b[i]]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<blockquote>
-<p>简单的动态规划问题，要解决大的问题，先解决小的问题。好比这题，当石头子的数量非常庞大时，我们就没有办法准确得到答案，但是当石子数量较少时，答案是显而易见的。因此，我们就要想办法把石子的数目往以得结果的数目上靠，一层一层往上走，逐步得到较大数目石子的答案。</p>
-</blockquote>
-<ul>
-<li><p>万能引用</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h4 id="bits-stdc-的缺点"><a href="#bits-stdc-的缺点" class="headerlink" title="bits/stdc++的缺点"></a>bits/stdc++的缺点</h4><ul>
-<li>bits/stdc++.h 不是GNU C++库的标准头文件，所以如果你在一些编译器（除了GCC）上编译你的代码，可能会失败，比如MSVC没有这个头文件。</li>
-<li>使用它会包含很多不必要的东西，并且会增加编译时间</li>
-<li>这个头文件不是C++标准的一部分，所以是不可移植的，应该尽量避免。</li>
-<li>尽管标准中有一些通用的头文件，但还是应该避免使用它来代替特定的头文件，因为编译器在每次编译转换单元时都实际地读取并解析每个包含的头文件(包括递归包含的头文件)。</li>
-</ul>
-<h4 id="bits-stdc-的优点"><a href="#bits-stdc-的优点" class="headerlink" title="bits/stdc++的优点"></a>bits/stdc++的优点</h4><ul>
-<li>在比赛中,使用这个文件是一个好主意,当你想减少时间浪费在做选择的时候;特别是当你的排名对时间很敏感的时候。</li>
-<li>这还减少了编写所有必要头文件的所有杂务。</li>
-<li>你不必为使用的每个函数都记住GNU c++的所有STL。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贪心算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8F%96%E7%9F%B3%E5%AD%90/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/10/27/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%95%B4%E6%95%B0%E5%88%92%E5%88%86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          每日一题--整数划分
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/10/23/Android-%E6%93%8D%E4%BD%9CSQLite%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">操作Android Studio内置SQLite的方法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "http://yoursite.com/2019/10/26/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8F%96%E7%9F%B3%E5%AD%90/", 
-    sourceId: "每日一题-取石子",
-    productKey: "true",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    </div></section>
   
 
-  
-
-  
-  
-
-
-  
+    
 
 
           </div>
@@ -361,9 +221,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
