@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>每日一题--找零钱 | Larry的博客</title>
+  <title>每日一题--加密 | Larry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目内容：一个小孩买了价值少于1美元的糖，假设提供了数目不限的面值为2 5美分、1 0美分、5美分、及1美分的硬币，写一个算法让小孩用最少的硬币付款。1美元=100美分输入描述糖的价格输出描述4种硬币的个数，中间用空格隔开。输入样例75输出样例3 0 0 0">
-<meta name="keywords" content="每日一题,贪心算法">
+  <meta name="description" content="89.加密 (15分)C时间限制：3 毫秒 |  C内存限制：3000 Kb题目内容： 一种Playfair密码变种加密方法如下：首先选择一个密钥单词（称为pair）（字母不重复，且都为小写字母），然后与字母表中其他字母一起填入至一个5x5的方阵中，填入方法如下：1.首先按行填入密钥串。2.紧接其后，按字母序按行填入不在密钥串中的字母。3.由于方阵中只有25个位置，最后剩下的那个字母则不需变">
+<meta name="keywords" content="每日一题,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题--找零钱">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;29&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%89%BE%E9%9B%B6%E9%92%B1&#x2F;index.html">
+<meta property="og:title" content="每日一题--加密">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8A%A0%E5%AF%86&#x2F;index.html">
 <meta property="og:site_name" content="Larry的博客">
-<meta property="og:description" content="题目内容：一个小孩买了价值少于1美元的糖，假设提供了数目不限的面值为2 5美分、1 0美分、5美分、及1美分的硬币，写一个算法让小孩用最少的硬币付款。1美元=100美分输入描述糖的价格输出描述4种硬币的个数，中间用空格隔开。输入样例75输出样例3 0 0 0">
+<meta property="og:description" content="89.加密 (15分)C时间限制：3 毫秒 |  C内存限制：3000 Kb题目内容： 一种Playfair密码变种加密方法如下：首先选择一个密钥单词（称为pair）（字母不重复，且都为小写字母），然后与字母表中其他字母一起填入至一个5x5的方阵中，填入方法如下：1.首先按行填入密钥串。2.紧接其后，按字母序按行填入不在密钥串中的字母。3.由于方阵中只有25个位置，最后剩下的那个字母则不需变">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T08:58:38.250Z">
+<meta property="og:updated_time" content="2019-10-31T03:30:04.284Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -145,35 +145,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-每日一题-找零钱" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-每日一题-加密" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      每日一题--找零钱
+      每日一题--加密
     </h1>
   
 
         
-        <a href="/2019/10/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%89%BE%E9%9B%B6%E9%92%B1/" class="archive-article-date">
-  	<time datetime="2019-10-29T08:51:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+        <a href="/2019/10/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8A%A0%E5%AF%86/" class="archive-article-date">
+  	<time datetime="2019-10-31T03:13:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>题目内容：<br>一个小孩买了价值少于1美元的糖，假设提供了数目不限的面值为2 5美分、1 0美分、5美分、及1美分的硬币，<br>写一个算法让小孩<br>用最少的硬币付款。1美元=100美分<br>输入描述<br>糖的价格<br>输出描述<br>4种硬币的个数，中间用空格隔开。<br>输入样例<br>75<br>输出样例<br>3 0 0 0</p>
+        <hr>
+<blockquote>
+<p> 89.加密 (15分)<br>C时间限制：3 毫秒 |  C内存限制：3000 Kb<br>题目内容：</p>
+<p>一种Playfair密码变种加密方法如下：首先选择一个密钥单词（称为pair）（字母不重复，且都为小写字母），然后与字母表中其他字母一起填入至一个5x5的方阵中，填入方法如下：<br>1.首先按行填入密钥串。<br>2.紧接其后，按字母序按行填入不在密钥串中的字母。<br>3.由于方阵中只有25个位置，最后剩下的那个字母则不需变换。<br>如果密钥为youandme，则该方阵如下：<br>y o u a n<br>d m e b c<br>f g h i j<br>k l p q r<br>s t v w x<br>在加密一对字母时，如am，在方阵中找到以这两个字母为顶点的矩形：<br>o u a<br>m e b </p>
 <a id="more"></a>
+
+<p>这对字母的加密字母为该矩形的另一对顶点，如本例中为ob。<br>请设计程序，使用上述方法对输入串进行加密，并输出加密后的串。<br>另外有如下规定：<br>1、一对一对取字母，如果最后只剩下一个字母，则不变换，直接放入加密串中；<br>2、如果一对字母中的两个字母相同，则不变换，直接放入加密串中；<br>3、如果一对字母中有一个字母不在正方形中，则不变换，直接放入加密串中；<br>4、如果字母对出现在方阵中的同一行或同一列，如df或hi，则只需简单对调这两个字母，即变换为fd或ih；<br>5、如果在正方形中能够找到以字母对为顶点的矩形，假如字母对为am，则该矩形的另一对顶点字母中，<br>与a同行的字母应在前<br>面，在上例中应是ob；同样若待变换的字母对为ta，则变换后的字母对应为wo；<br>6、本程序中输入串均为小写字母，并不含标点、空格或其它字符。<br>解密方法与加密相同，即对加密后的字符串再加密，将得到原始串。<br>输入描述<br>从控制台输入两行字符串，第一行为密钥单词（长度小于等于25，字母不重复，且都为小写字母），<br>第二行为待加密字符串（长度<br>小于等于50），两行字符串末尾都有一个回车换行符，并且两行字符串均为小写字母，不含其它字符。<br>输出描述<br>在标准输出上输出加密后的字符串。<br>输入样例<br>youandme<br>welcometohangzhou<br>输出样例<br>vbrmmomvugnagzguu</p>
 </blockquote>
 <hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, min;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d "</span>, n / <span class="number">25</span>);</span><br><span class="line">	n = n - <span class="number">25</span> * (n / <span class="number">25</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d "</span>, n / <span class="number">10</span>);</span><br><span class="line">	n = n - <span class="number">10</span> * (n / <span class="number">10</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d "</span>, n / <span class="number">5</span>);</span><br><span class="line">	n = n - <span class="number">5</span> * (n / <span class="number">5</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, n);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	pwd：记录密钥</span></span><br><span class="line"><span class="comment">	str：用来记录生成的正方形数组</span></span><br><span class="line"><span class="comment">	c1: 填入其他字母时的一个变量</span></span><br><span class="line"><span class="comment">	str1: 用来记录要加密的字符串</span></span><br><span class="line"><span class="comment">	res: 用来记录加密后的字符串</span></span><br><span class="line"><span class="comment">	i, j, m: 普通变量 </span></span><br><span class="line"><span class="comment">	len: 密钥的长度</span></span><br><span class="line"><span class="comment">	len1: 待加密字符串的长度</span></span><br><span class="line"><span class="comment">	x1 ~ y2: 记录坐标 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">char</span> pwd[<span class="number">26</span>], str[<span class="number">5</span>][<span class="number">5</span>], c1 = <span class="string">'a'</span>, str1[<span class="number">51</span>], res[<span class="number">51</span>];</span><br><span class="line"><span class="keyword">int</span> i, j, m = <span class="number">0</span>, len = <span class="number">0</span>, len1 = <span class="number">0</span>, x1 = <span class="number">-1</span>, y1, x2 = <span class="number">-1</span>, y2;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//判断当前字符是否在某字符串中 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">char</span> c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> n = <span class="number">0</span>; n &lt; len; n++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(pwd[n] == c)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//找出两个字符在二维数组中的横纵坐标 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">(<span class="keyword">char</span> a, <span class="keyword">char</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(str[i][j] == a)&#123;</span><br><span class="line">				x1 = i;</span><br><span class="line">				y1 = j;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(str[i][j] == b)&#123;</span><br><span class="line">				x2 = i;</span><br><span class="line">				y2 = j;</span><br><span class="line">			&#125;		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, pwd);</span><br><span class="line">	<span class="keyword">for</span>(len = <span class="number">0</span>; pwd[len]; len++)&#123;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, str1);</span><br><span class="line">	<span class="keyword">for</span>(len1 = <span class="number">0</span>; str1[len1]; len1++)&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//	printf("%s\n", pwd);</span></span><br><span class="line"><span class="comment">//	printf("%s\n", str1);</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++)&#123;</span><br><span class="line">			<span class="comment">//现将密钥填入 </span></span><br><span class="line">			<span class="keyword">if</span>(m &lt; len)&#123;</span><br><span class="line">				str[i][j] = pwd[m];</span><br><span class="line">				m++;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span>(!fun(c1))&#123;</span><br><span class="line">				c1 = c1 + <span class="number">1</span>;</span><br><span class="line">			&#125; </span><br><span class="line">			str[i][j] = c1;</span><br><span class="line">			c1 = c1 + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//打印二维数组 </span></span><br><span class="line"><span class="comment">//	for(i = 0; i &lt; 5; i++)&#123;</span></span><br><span class="line"><span class="comment">//		for(j = 0; j &lt; 5; j++)&#123;</span></span><br><span class="line"><span class="comment">//			printf("%c ", str[i][j]);			</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line"><span class="comment">//		printf("\n");</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> R = <span class="number">0</span>; R &lt; len1; R = R + <span class="number">2</span>)&#123;</span><br><span class="line">		</span><br><span class="line">		x1 = <span class="number">-1</span>;</span><br><span class="line">		x2 = <span class="number">-1</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//两个字母相同，则不变换，直接放入加密串中</span></span><br><span class="line">		<span class="keyword">if</span>(str1[R] == str1[R + <span class="number">1</span>])&#123;</span><br><span class="line">			res[R] = str1[R]; </span><br><span class="line">			res[R + <span class="number">1</span>] = str1[R + <span class="number">1</span>];</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			fun1(str1[R], str1[R + <span class="number">1</span>]);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//如果有一个字母不在正方形中，则不变换 </span></span><br><span class="line">			<span class="keyword">if</span>(x1 == <span class="number">-1</span> || x2 == <span class="number">-1</span>)&#123;</span><br><span class="line">				res[R] = str1[R]; </span><br><span class="line">				res[R + <span class="number">1</span>] = str1[R + <span class="number">1</span>];</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="comment">//同一行或同一列,对调即可 </span></span><br><span class="line">				<span class="keyword">if</span>(x1 == x2 || y1 == y2)&#123;</span><br><span class="line">					res[R] = str1[R + <span class="number">1</span>]; </span><br><span class="line">					res[R + <span class="number">1</span>] = str1[R];</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					res[R] = str[x1][y2];</span><br><span class="line">					res[R + <span class="number">1</span>] = str[x2][y1];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; 	</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="comment">//最后如果只剩一个字母，直接加入即可 </span></span><br><span class="line">	<span class="keyword">if</span>(len1 % <span class="number">2</span> == <span class="number">1</span>)&#123;</span><br><span class="line">		res[len1 <span class="number">-1</span>] = str1[len1 <span class="number">-1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, res);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>贪心算法思想，要想数量少，就拿面额大的即可。</p>
+<blockquote>
+<p>题目不难，但过程比较繁琐，一定要等到思考清楚后再下笔。<em>不能畏惧麻烦</em>，其实细分后来看，每一步都不难，不要被自己给吓倒了。</p>
+<p>然后就是关于<strong>超时</strong>得问题，该简化得地方自己一定要简化，这样会给自己解决掉很多不必要得麻烦。</p>
+<p>最后便是<strong>全局变量</strong>得使用，个人认为，在一定程度上，可以放开使用，这样在写题时就不用将值传来传去，不容易出错。</p>
+</blockquote>
 
       
 
@@ -191,7 +198,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贪心算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -247,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%89%BE%E9%9B%B6%E9%92%B1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8A%A0%E5%AF%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -261,18 +268,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8A%A0%E5%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          每日一题--加密
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%BB%91%E9%9B%AA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">每日一题--滑雪</div>
+    <a href="/2019/10/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%89%BE%E9%9B%B6%E9%92%B1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">每日一题--找零钱</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -303,8 +301,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/10/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%89%BE%E9%9B%B6%E9%92%B1/", 
-    sourceId: "每日一题-找零钱",
+    url: "http://yoursite.com/2019/10/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8A%A0%E5%AF%86/", 
+    sourceId: "每日一题-加密",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
