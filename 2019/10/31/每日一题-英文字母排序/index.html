@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Larry的博客">
 <meta property="og:description" content="116.英文字母排序 (20分)C时间限制：3000 毫秒 |  C内存限制：3000 Kb题目内容：编写一个程序，当输入英文字符串时，计算机将这个句子中的英文字母按字典字母顺序重新排列，排列后的单词的长度要与原始句子中的长度相同，并且要求只对Ａ到Ｚ的字母重新排列，其它字符保持原来的状态。输入描述一个字符串，包括大写英文字母，以及其他字符输出描述字符串的重新排列，只是大写字母按字典顺序，其他字">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-31T06:04:03.038Z">
+<meta property="og:updated_time" content="2019-10-31T09:11:16.955Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -176,6 +176,13 @@
 <hr>
 <blockquote>
 <p>题目很简单，重点在于<strong>基础</strong>以及自己的<strong>细心</strong>程度。</p>
+</blockquote>
+<hr>
+<p>补充：做完后，我上网搜索了一下有没有更优的解法，答案是有的，再次附上代码。这种解法一步到位，便捷了许多。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[<span class="number">100</span>], t;</span><br><span class="line">	<span class="keyword">int</span> i, j, l;</span><br><span class="line">	<span class="comment">//输入字符串，遇到空格不会中断 </span></span><br><span class="line">	gets(s);</span><br><span class="line">	<span class="comment">//使用内置函数，简化操作 </span></span><br><span class="line"> 	l = <span class="built_in">strlen</span>(s);</span><br><span class="line"> 	</span><br><span class="line"> 	<span class="comment">//直接在原字符串上进行冒泡排序 </span></span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; l; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j = i + <span class="number">1</span>; j &lt; l; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[i] &gt;= <span class="string">'A'</span> &amp;&amp; s[i] &lt;= <span class="string">'Z'</span> &amp;&amp; s[j] &gt;= <span class="string">'A'</span> &amp;&amp; s[j] &lt;= <span class="string">'Z'</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(s[j] &lt; s[i])&#123;</span><br><span class="line">					t = s[i];</span><br><span class="line">					s[i] = s[j];</span><br><span class="line">					s[j] = t;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//输出字符串 </span></span><br><span class="line">	<span class="built_in">puts</span>(s);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>要学会合理使用<strong>内置函数</strong>。</p>
 </blockquote>
 
       
