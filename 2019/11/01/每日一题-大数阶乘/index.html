@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Larry的博客</title>
+  <title>每日一题--大数阶乘 | Larry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Larry的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="117.大数相乘 (20分)C时间限制：3000 毫秒 |  C内存限制：3000 Kb题目内容：一个整型变量只能用来存贮较小的n!的值，当 n 较大时，可将阶乘值中的每一个数字放在一个一维数组的一个元素中。使用这方法，打印n!的值；输入描述整数n输出描述n!的值输入样例18输出样例6402373705728000">
+<meta name="keywords" content="每日一题,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一题--大数阶乘">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98&#x2F;index.html">
 <meta property="og:site_name" content="Larry的博客">
+<meta property="og:description" content="117.大数相乘 (20分)C时间限制：3000 毫秒 |  C内存限制：3000 Kb题目内容：一个整型变量只能用来存贮较小的n!的值，当 n 较大时，可将阶乘值中的每一个数字放在一个一维数组的一个元素中。使用这方法，打印n!的值；输入描述整数n输出描述n!的值输入样例18输出样例6402373705728000">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-01T09:00:03.822Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -141,151 +145,173 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-每日一题-大数阶乘" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      每日一题--大数阶乘
+    </h1>
+  
+
+        
+        <a href="/2019/11/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" class="archive-article-date">
+  	<time datetime="2019-11-01T08:58:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<blockquote>
+<p> 117.大数相乘 (20分)<br>C时间限制：3000 毫秒 |  C内存限制：3000 Kb<br>题目内容：<br>一个整型变量只能用来存贮较小的n!的值，当 n 较大时，可将阶乘值中的每一个数字放在一个一维数组的一个元素中。<br>使用这方法，打印n!的值；<br>输入描述<br>整数n<br>输出描述<br>n!的值<br>输入样例<br>18<br>输出样例<br>6402373705728000</p>
+<a id="more"></a>
+</blockquote>
+<hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	a: 用来存放结果的数组</span></span><br><span class="line"><span class="comment">	tmp: 用来存储进位量</span></span><br><span class="line"><span class="comment">	n: 输入参数 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>], n, tmp = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//初始化 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">		a[i] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	a[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++)&#123;</span><br><span class="line">			a[j] = a[j] * i + tmp;</span><br><span class="line">			tmp = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(a[j] &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">				tmp = a[j] / <span class="number">10</span>;</span><br><span class="line">				a[j] = a[j] % <span class="number">10</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	fun();</span><br><span class="line">	<span class="comment">//从尾向头找，不是0就开始输出结果 </span></span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">99</span>; a[i] == <span class="number">0</span>; i--)&#123;	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt;=<span class="number">0</span>; j--)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, a[j]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>题目不难，但是一定得想清楚怎么操作。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/22/hexo%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-10-22T11:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/22/hexo%E7%9A%84%E4%BD%BF%E7%94%A8/">hexo发布你的第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心得</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/22/typroa%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-10-22T09:25:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/31/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E8%A7%84%E8%8C%83%E4%BD%BF%E7%94%A8%E7%A9%BA%E6%A0%BC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C语言之规范使用空格</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/22/typroa%E4%BD%BF%E7%94%A8/">Typora基础使用及常用快捷键</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/11/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/", 
+    sourceId: "每日一题-大数阶乘",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心得</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2019-10-21T09:18:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">springMVC 中文乱码问题解决（idea）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心得</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
+
   
 
 
@@ -309,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
