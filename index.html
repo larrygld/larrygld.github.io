@@ -143,6 +143,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-每日一题-最短距离" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/">每日一题--最短距离</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
+  	<time datetime="2019-11-05T11:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<blockquote>
+<p> 119.最短路径 (15分)<br>C时间限制：3000 毫秒 |  C内存限制：3000 Kb<br>题目内容：<br> 有5个城市(A,B,C,D,E),其中每个城市到其他城市的直达距离已知，两个城市之间只有一条公路。计算从城市A到其他任意城市<br>的最短路径距离。<br>输入描述<br>4行数据， 第一行是A到(B,C,D,E)的直达距离，第二行是B到（C,D,E）的直达距离，。。。，第4行是D到E的直达距离。<br>输出描述<br>A城市到(B,C,D,E)的最短距离。<br>输入样例<br>2 3 4 5<br>3 4 2<br>4 3<br>3<br>输出样例<br>2 3 4 4</p>
+</blockquote>
+<hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 999999</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">5</span>][<span class="number">5</span>], dis[<span class="number">5</span>], v[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	a: 记录各点之间的距离</span></span><br><span class="line"><span class="comment">	dis: 记录点A到各点的距离</span></span><br><span class="line"><span class="comment">	v: 记录该点是否被访问 </span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> min = inf, k, cnt = <span class="number">0</span>, pos = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//第一个节点A默认被访问，直连最短的直接为最短 </span></span><br><span class="line">	v[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//自己到自己初始化值为最小 </span></span><br><span class="line">	dis[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">		dis[i] = a[<span class="number">0</span>][i];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(cnt &lt; <span class="number">3</span>)&#123;</span><br><span class="line">		<span class="comment">//遍历没有记录的节点且距原点最短的 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(!v[i] &amp;&amp; a[<span class="number">0</span>][i] &lt; min)&#123;</span><br><span class="line">				min = a[<span class="number">0</span>][i];</span><br><span class="line">				k = i; </span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		v[k] = <span class="number">1</span>;</span><br><span class="line">		min = inf;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//如果经过该点距离变短，直接更新 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;	</span><br><span class="line">			<span class="comment">//如果该点没被记录，则尝试更新	</span></span><br><span class="line">			<span class="keyword">if</span>(!v[i])&#123;			</span><br><span class="line">				<span class="keyword">if</span>(a[k][i] + dis[k] &lt; dis[i])&#123;</span><br><span class="line">					dis[i] = a[k][i] + dis[k];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	 	cnt++;		</span><br><span class="line">	&#125;		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//输入初始距离数据 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; <span class="number">5</span>; j++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">			a[j][i] = a[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//打印初始时的各点之间的距离 </span></span><br><span class="line"><span class="comment">//	for(int i = 0; i &lt; 5; i++)&#123;</span></span><br><span class="line"><span class="comment">//		for(int j = 0; j &lt; 5; j++)&#123;</span></span><br><span class="line"><span class="comment">//			printf("%d ", a[i][j]);</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line"><span class="comment">//		printf("\n"); </span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line">	</span><br><span class="line">	fun();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, dis[i]);</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>时隔几天才写下这篇博客，这几天比较懒散，也一直卡在了这道题目，我查了很多博客，都不能完全看懂，直到今天，看了一个教学视频，才懂得了迪杰斯特拉算法。</p>
+<p>其实写的过程不难，还是要自己懂得算法的真谛，这样才能更好地运用到题目之中。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-每日一题-花儿朵朵" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -865,87 +954,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/29/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%89%BE%E9%9B%B6%E9%92%B1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-每日一题-滑雪" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%BB%91%E9%9B%AA/">每日一题--滑雪</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%BB%91%E9%9B%AA/" class="archive-article-date">
-  	<time datetime="2019-10-28T15:05:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p> 109.滑雪 (10分)<br>C时间限制：1 毫秒 |  C内存限制：3000 Kb<br>题目内容：<br> Michael喜欢滑雪百这并不奇怪， 因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不<br>得不再次走上坡或者等待升降机来载你。Michael想知道载一个区域中最长底滑坡。区域由一个二维数组给出。<br>数组的每个数字代表点的高度。下面是一个例子<br> 1  2  3  4 5<br>16 17 18 19 6<br>15 24 25 20 7<br>14 23 22 21 8<br>13 12 11 10 9<br>一个人可以从某个点滑向上下左右相邻四个点之一，当且仅当高度减小。在上面的例子中，一条可滑行的滑坡为24-17-16-1。当然25-24-23-…-3-2-1更长。事实上，这是最长的一条。</p></blockquote>
-        
-          <a class="article-more-a" href="/2019/10/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%BB%91%E9%9B%AA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/28/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%BB%91%E9%9B%AA/">展开全文 >></a>
         </p>
       
 
