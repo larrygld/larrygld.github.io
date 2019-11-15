@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 算法 | Larry的博客</title>
+  <title>每日一题--砝码组合 | Larry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Larry的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E7%AE%97%E6%B3%95&#x2F;index.html">
+  <meta name="description" content="66.砝码组合 (15分)C时间限制：3000 毫秒 |  C内存限制：3000 Kb题目内容：用天平称重时，我们希望用尽可能少的砝码组合称出尽可能多的重量。如果只有5个砝码，重量分别是1，3，9，27，81。则它们可以组合称出1到121之间任意整数重量（砝码允许放在左右两个盘中）。本题目要求编程实现：对用户输入的重量(1~121)，给出砝码组合方案（用加减式表示，减代表砝码放在物品盘）。例如">
+<meta name="keywords" content="每日一题,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一题--砝码组合">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;15&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%A0%9D%E7%A0%81%E7%BB%84%E5%90%88&#x2F;index.html">
 <meta property="og:site_name" content="Larry的博客">
+<meta property="og:description" content="66.砝码组合 (15分)C时间限制：3000 毫秒 |  C内存限制：3000 Kb题目内容：用天平称重时，我们希望用尽可能少的砝码组合称出尽可能多的重量。如果只有5个砝码，重量分别是1，3，9，27，81。则它们可以组合称出1到121之间任意整数重量（砝码允许放在左右两个盘中）。本题目要求编程实现：对用户输入的重量(1~121)，给出砝码组合方案（用加减式表示，减代表砝码放在物品盘）。例如">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-15T15:27:39.544Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -141,36 +145,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-每日一题-砝码组合" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      每日一题--砝码组合
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%A0%9D%E7%A0%81%E7%BB%84%E5%90%88/" class="archive-article-date">
+
+        
+        <a href="/2019/11/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%A0%9D%E7%A0%81%E7%BB%84%E5%90%88/" class="archive-article-date">
   	<time datetime="2019-11-15T15:21:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%A0%9D%E7%A0%81%E7%BB%84%E5%90%88/">每日一题--砝码组合</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<blockquote>
+<p>66.砝码组合 (15分)<br>C时间限制：3000 毫秒 |  C内存限制：3000 Kb<br>题目内容：<br>用天平称重时，我们希望用尽可能少的砝码组合称出尽可能多的重量。<br>如果只有5个砝码，重量分别是1，3，9，27，81。<br>则它们可以组合称出1到121之间任意整数重量（砝码允许放在左右两个盘中）。<br>本题目要求编程实现：对用户输入的重量(1~121)，<br>给出砝码组合方案（用加减式表示，减代表砝码放在物品盘）。<br>例如：<br>输入：<br>5<br>输出：<br>9-3-1<br>输入：<br>19<br>输出：<br>27-9+1</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<p>要求程序输出的组合总是大数在前小数在后。<br>输入描述<br>用户输入的重量(1~121)，<br>输出描述<br>给出砝码组合方案（用加减式表示，减代表砝码放在物品盘）。<br>输入样例<br>19<br>输出样例<br>27-9+1</p>
+</blockquote>
+<hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, v[<span class="number">5</span>], s[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">27</span>, <span class="number">81</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	n: 要求被组合的数</span></span><br><span class="line"><span class="comment">	v: 记录该砝码是否加入</span></span><br><span class="line"><span class="comment">	s: 记录砝码重量</span></span><br><span class="line"><span class="comment">	m: 当前砝码是否加减进行的位置</span></span><br><span class="line"><span class="comment">	sum：记录运行时累加的重量 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> sum)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(sum == n)&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">4</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(v[i] == <span class="number">1</span>)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d"</span>, s[i]);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			i--;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--)&#123;</span><br><span class="line">			<span class="keyword">if</span>(v[j] == <span class="number">1</span>)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"+%d"</span>, s[j]);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(v[j] == <span class="number">-1</span>)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"-%d"</span>, s[j]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(m &gt;= <span class="number">5</span>)&#123;	<span class="comment">//递归结束条件 </span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//不加 标注为 0</span></span><br><span class="line">	fun(m + <span class="number">1</span>, sum);</span><br><span class="line">	<span class="comment">//加 标注为 1</span></span><br><span class="line">	v[m] = <span class="number">1</span>;</span><br><span class="line">	fun(m + <span class="number">1</span>, sum + s[m]);</span><br><span class="line">	v[m] = <span class="number">0</span>;	<span class="comment">//先假设加入此砝码可以组合到所需重量，如果运行完无法达到，则重新置为0，下面减同理 </span></span><br><span class="line">	<span class="comment">//减 标注为 -1</span></span><br><span class="line">	v[m] = <span class="number">-1</span>;</span><br><span class="line">	fun(m + <span class="number">1</span>, sum - s[m]);</span><br><span class="line">	v[m] = <span class="number">0</span>;</span><br><span class="line">	 </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	fun(<span class="number">0</span>, <span class="number">0</span>);  <span class="comment">//从0开始，从0开始累积重量 </span></span><br><span class="line"><span class="comment">//	printf("\n");</span></span><br><span class="line"><span class="comment">//	for(int i = 0; i &lt; 5; i++)&#123;</span></span><br><span class="line"><span class="comment">//		printf("%d ", v[i]);</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>许久许久没有更新了，最近科三的事情一直萦绕在心头，很遗憾！革命尚未成功，通知还需努力！</p>
+<p>然后讲题！我真的是自己吓自己，其实啊，那么难！做这种递归调用的题，我们要学会宏观思想！！！</p>
+<p>我们一大步一大步来理解，无需死抠细节，否则你会把自己陷入一个死胡同，等你做过题多了之后，在你熟练理解之后，你再回过头来想，你会发现，其实理解，并没有那么难，难就难在克服自己内衣畏惧难题的恐惧！相信自己，静下心来思考题目，你会解决每一道难题的！！！</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,400 +204,118 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%A0%9D%E7%A0%81%E7%BB%84%E5%90%88/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" class="archive-article-date">
-  	<time datetime="2019-11-05T12:21:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">每日一题--约瑟夫环</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">每日一题--约瑟夫环</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/11/15/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E7%A0%9D%E7%A0%81%E7%BB%84%E5%90%88/", 
+    sourceId: "每日一题-砝码组合",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
-  	<time datetime="2019-11-05T11:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB/">每日一题--最短距离</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/03/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E8%8A%B1%E5%84%BF%E6%9C%B5%E6%9C%B5/" class="archive-article-date">
-  	<time datetime="2019-11-03T04:15:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/03/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E8%8A%B1%E5%84%BF%E6%9C%B5%E6%9C%B5/">每日一题--花儿朵朵</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2019-11-02T15:53:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%90%88%E5%B9%B6%E6%8E%92%E5%BA%8F/">每日一题--合并排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%B6%82%E8%89%B2%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2019-11-02T12:55:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%B6%82%E8%89%B2%E9%97%AE%E9%A2%98/">每日一题--涂色问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%AF%BC%E5%BC%B9%E6%8B%A6%E6%88%AA/" class="archive-article-date">
-  	<time datetime="2019-11-02T08:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%AF%BC%E5%BC%B9%E6%8B%A6%E6%88%AA/">每日一题--导弹拦截</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/" class="archive-article-date">
-  	<time datetime="2019-11-01T08:58:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%A4%A7%E6%95%B0%E9%98%B6%E4%B9%98/">每日一题--大数阶乘</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2019-10-31T06:01:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E6%8E%92%E5%BA%8F/">每日一题--英文字母排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8A%A0%E5%AF%86/" class="archive-article-date">
-  	<time datetime="2019-10-31T03:13:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/31/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%8A%A0%E5%AF%86/">每日一题--加密</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/%E7%AE%97%E6%B3%95/page/2/">2</a><a class="extend next" rel="next" href="/tags/%E7%AE%97%E6%B3%95/page/2/">Next &amp;raquo;</a>
-    </nav>
+
   
 
 
@@ -603,9 +339,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
