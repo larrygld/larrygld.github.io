@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | Larry的博客</title>
+  <title>每日一题--正方形的判定 | Larry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Larry的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;10&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="1.2018三大校赛题B-正方形的判断 (10分)题目内容：给定四个点的坐标, 问这四个点相连之后是否可以组成正方形.输入描述：第一行一个正整数N,表示测试数据组数,N&amp;lt;=500每组测试数据占一行,给出8个整数x1,y1,x2,y2,x3,y3,x4,y4. -1000000&amp;lt;= x,y &amp;lt;= 1000000输出描述：输出一个正整数, 表示N组测试数据中有多少组中的点可以组">
+<meta name="keywords" content="算法,每日一题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每日一题--正方形的判定">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;17&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E5%88%A4%E5%AE%9A&#x2F;index.html">
 <meta property="og:site_name" content="Larry的博客">
+<meta property="og:description" content="1.2018三大校赛题B-正方形的判断 (10分)题目内容：给定四个点的坐标, 问这四个点相连之后是否可以组成正方形.输入描述：第一行一个正整数N,表示测试数据组数,N&amp;lt;=500每组测试数据占一行,给出8个整数x1,y1,x2,y2,x3,y3,x4,y4. -1000000&amp;lt;= x,y &amp;lt;= 1000000输出描述：输出一个正整数, 表示N组测试数据中有多少组中的点可以组">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-17T01:35:17.105Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -141,109 +145,173 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-每日一题-正方形的判定" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/22/typroa%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-10-22T09:25:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/22/typroa%E4%BD%BF%E7%94%A8/">Typora基础使用及常用快捷键</a>
+    <h1 class="article-title" itemprop="name">
+      每日一题--正方形的判定
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E5%88%A4%E5%AE%9A/" class="archive-article-date">
+  	<time datetime="2019-11-17T01:32:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<blockquote>
+<p> 1.2018三大校赛题B-正方形的判断 (10分)<br>题目内容：<br>给定四个点的坐标, 问这四个点相连之后是否可以组成正方形.<br>输入描述：<br>第一行一个正整数N,表示测试数据组数,N&lt;=500<br>每组测试数据占一行,给出8个整数x1,y1,x2,y2,x3,y3,x4,y4. -1000000&lt;= x,y &lt;= 1000000<br>输出描述：<br>输出一个正整数, 表示N组测试数据中有多少组中的点可以组成正方形.<br>输入样例：<br>2<br>0 1 3 1 0 0 3 0<br>1 1 -1 1 -1 -1 1 -1<br>输出样例<br>1</p>
+<a id="more"></a>
+</blockquote>
+<hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		n: 测试样例数</span></span><br><span class="line"><span class="comment">		x1 ~ y4: 点坐标</span></span><br><span class="line"><span class="comment">		flag1 ~ flag3: 判定结果映射值</span></span><br><span class="line"><span class="comment">		a12 ~ a13: 边长 </span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> x1, y1, x2, y2, x3, y3, x4, y4, flag1, flag2, flag3, a12, a13, a14;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d%d%d%d"</span>, &amp;x1, &amp;y1, &amp;x2, &amp;y2, &amp;x3, &amp;y3, &amp;x4, &amp;y4);</span><br><span class="line">		</span><br><span class="line">		a12 = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);</span><br><span class="line">		</span><br><span class="line">		a13 = (x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3);</span><br><span class="line">		</span><br><span class="line">		a14 = (x1 - x4) * (x1 - x4) + (y1 - y4) * (y1 - y4);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(a12 == a13)&#123;</span><br><span class="line">			<span class="comment">//判定方法：正方形的对角线垂直且相等 </span></span><br><span class="line">			flag1 = (x1 - x4) * (x2 - x3) + (y1 - y4) * (y2 - y3);</span><br><span class="line">			flag2 = (x1 - x4) * (x1 - x4) + (y1 - y4) * (y1 - y4);</span><br><span class="line">			flag3 = (x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3);</span><br><span class="line">			<span class="keyword">if</span>(flag1 == <span class="number">0</span> &amp;&amp; flag2 == flag3)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"perfect\n"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="comment">//				printf("%d %d %d %d %d %d", flag1, flag2, flag3, a12, a13, a14);</span></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"not perfect\n"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(a12 == a14)&#123;</span><br><span class="line">			flag1 = (x1 - x3) * (x2 - x4) + (y1 - y3) * (y2 - y4);</span><br><span class="line">			flag2 = (x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3);</span><br><span class="line">			flag3 = (x2 - x4) * (x2 - x4) + (y2 - y4) * (y2 - y4);</span><br><span class="line">			<span class="keyword">if</span>(flag1 == <span class="number">0</span> &amp;&amp; flag2 == flag3)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"perfect\n"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"not perfect\n"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(a13 == a14)&#123;</span><br><span class="line">			flag1 = (x1 - x2) * (x4 - x3) + (y1 - y2) * (y4 - y3);</span><br><span class="line">			flag2 = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);</span><br><span class="line">			flag3 = (x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3);</span><br><span class="line">			<span class="keyword">if</span>(flag1 == <span class="number">0</span> &amp;&amp; flag2 == flag3)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"perfect\n"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"not perfect\n"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"not perfect\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>上次遇到的校赛的题昨天终于解答了，也算是一种自我进步吧！</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心得</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E5%88%A4%E5%AE%9A/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2019-10-21T09:18:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-GCD%E6%B1%82%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">每日一题--GCD求最大公约数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">springMVC 中文乱码问题解决（idea）</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E5%88%A4%E5%AE%9A/", 
+    sourceId: "每日一题-正方形的判定",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心得</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/10/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2019/10/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+  
+
+
   
 
 
@@ -267,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
