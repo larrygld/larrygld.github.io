@@ -143,27 +143,28 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-111" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/19/111/">111</a>
+      <a class="article-title" href="/2019/12/27/Vue-js/">Vue.js</a>
     </h1>
   
 
         
-        <a href="/2019/12/19/111/" class="archive-article-date">
-  	<time datetime="2019-12-19T04:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
+        <a href="/2019/12/27/Vue-js/" class="archive-article-date">
+  	<time datetime="2019-12-27T06:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1111</p>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">v-text= -&gt; 设置文本</span><br><span class="line">v-html= -&gt; HTML标签可正常翻译</span><br><span class="line">v-bind:src= -&gt; 为图片绑定资源路径</span><br><span class="line">v-bind:value(<span class="literal">true</span>-value/<span class="literal">false</span>-value)= -&gt; 绑定组件的属性值 </span><br><span class="line">v-on(@):eventname= -&gt; 事件绑定</span><br><span class="line">v-show= -&gt; 当值为<span class="literal">false</span>时隐藏，为<span class="literal">true</span>时显示组件</span><br><span class="line">计算属性：</span><br><span class="line">     computed: &#123;</span><br><span class="line">          方法名字: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           		(方法实现);	</span><br><span class="line">          &#125;</span><br><span class="line">	&#125;</span><br><span class="line">    引用的时候直接 &#123;&#123;方法名字&#125;&#125;即可</span><br><span class="line">v-<span class="keyword">if</span>/v-<span class="keyword">else</span></span><br><span class="line">  实例：</span><br><span class="line">	&lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"default"</span>         </span><br><span class="line">    v-on:click=<span class="string">"addToCart"</span>      </span><br><span class="line">    v-<span class="keyword">if</span>=<span class="string">"canAddToCart"</span>         </span><br><span class="line">    &gt;Add to cart&lt;<span class="regexp">/button&gt;       </span></span><br><span class="line"><span class="regexp">	&lt;button class="disabled"        </span></span><br><span class="line"><span class="regexp">    v-else &gt;Add to cart&lt;/</span>button&gt;    两个按钮必须相邻，两者显示二选一(相邻的两个相同的标签才会起作用)</span><br><span class="line">v-model 双向绑定表单或输入框和其他模板间的数据</span><br><span class="line">	&lt;input v-model=<span class="string">"order.lastName"</span>&gt;</span><br><span class="line">&lt;option v-<span class="keyword">for</span>=<span class="string">"(state, key) in states"</span>  -&gt; v-<span class="keyword">for</span> 遍历列表</span><br><span class="line">   v-bind:value=<span class="string">"state"</span>&gt;			</span><br><span class="line">        &#123;&#123;key&#125;&#125;						</span><br><span class="line"> &lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input v-model.trim="order.city" -&gt; 修饰符 .trim 去除空格 .number 使类型为number类型,即去0</span></span><br><span class="line"><span class="regexp">       class="form-control" /</span>&gt;             .lazy 使用v-model指令绑定的数据不会立马同步，需要在                                                     触发change事件后才进行同步</span><br><span class="line">&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"inventory-message"</span>				   </span><br><span class="line">	v-<span class="keyword">if</span>=<span class="string">"product.availableInventory - cartItemCount &lt; 5"</span>&gt;</span><br><span class="line">	Only &#123;&#123;product.availableInventory - cartItemCount&#125;&#125; left!</span><br><span class="line">&lt;<span class="regexp">/span&gt;  -&gt; 支持表达式计算，一般情况下，没有嵌套if-else时，使用v-show</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -176,7 +177,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/19/111/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/27/Vue-js/">展开全文 >></a>
         </p>
       
 
@@ -326,11 +327,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		
 		</ul>
@@ -486,11 +487,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		
 		</ul>
@@ -568,11 +569,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -812,11 +813,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -898,11 +899,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
         		</li>
       		
 		</ul>
@@ -956,7 +957,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Larry
+    		&copy; 2020 Larry
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1039,23 +1040,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Sqlite</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心得</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1063,7 +1048,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Sqlite</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1071,15 +1072,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">每日一题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color5">每日一题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1087,11 +1084,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">快排</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">贪心算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">快排</a>
               </li>
              
               <li class="article-tag-list-item">
