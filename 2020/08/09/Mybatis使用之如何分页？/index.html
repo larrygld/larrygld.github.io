@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Larry的博客">
 <meta property="og:description" content="在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路： 将所有数据查询查询出来，在controller控制层进行分页； 利用mysal自带的分页查询功能； pagehelper">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-09T03:11:00.179Z">
+<meta property="og:updated_time" content="2020-08-09T03:13:34.705Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -170,9 +170,7 @@
 <li>利用mysal自带的分页查询功能；</li>
 <li>pagehelper插件。</li>
 </ol>
-<h5 id="我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot-mybatis。"><a href="#我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot-mybatis。" class="headerlink" title="我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot + mybatis。"></a>我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot + mybatis。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
+<h5 id="我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot-mybatis。"><a href="#我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot-mybatis。" class="headerlink" title="我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot + mybatis。"></a>我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot + mybatis。<a id="more"></a></h5><ul>
 <li>首先我们先引入maven依赖：</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;pagehelper-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2.10&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
