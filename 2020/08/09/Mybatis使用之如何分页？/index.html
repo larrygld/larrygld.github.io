@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/12 | Larry的博客</title>
+  <title>Mybatis使用之如何分页？ | Larry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Larry的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;12&#x2F;index.html">
+  <meta name="description" content="在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路： 将所有数据查询查询出来，在controller控制层进行分页； 利用mysal自带的分页查询功能； pagehelper">
+<meta name="keywords" content="-mybatis - 分页插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis使用之如何分页？">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;08&#x2F;09&#x2F;Mybatis%E4%BD%BF%E7%94%A8%E4%B9%8B%E5%A6%82%E4%BD%95%E5%88%86%E9%A1%B5%EF%BC%9F&#x2F;index.html">
 <meta property="og:site_name" content="Larry的博客">
+<meta property="og:description" content="在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路： 将所有数据查询查询出来，在controller控制层进行分页； 利用mysal自带的分页查询功能； pagehelper">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-08-09T03:11:00.179Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -141,129 +145,181 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Mybatis使用之如何分页？" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/Vue-js/" class="archive-article-date">
-  	<time datetime="2019-12-27T06:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/Vue-js/">Vue.js</a>
+    <h1 class="article-title" itemprop="name">
+      Mybatis使用之如何分页？
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/09/Android-Studio%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F/" class="archive-article-date">
-  	<time datetime="2019-12-09T08:35:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-09</time>
+        
+        <a href="/2020/08/09/Mybatis%E4%BD%BF%E7%94%A8%E4%B9%8B%E5%A6%82%E4%BD%95%E5%88%86%E9%A1%B5%EF%BC%9F/" class="archive-article-date">
+  	<time datetime="2020-08-09T02:40:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/09/Android-Studio%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F/">Android Studio使用阿里云镜像</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看"><a href="#在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看" class="headerlink" title="在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看"></a>在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看</h5><h5 id="在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路："><a href="#在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路：" class="headerlink" title="在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路："></a>在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路：</h5><ol>
+<li>将所有数据查询查询出来，在controller控制层进行分页；</li>
+<li>利用mysal自带的分页查询功能；</li>
+<li>pagehelper插件。</li>
+</ol>
+<h5 id="我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot-mybatis。"><a href="#我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot-mybatis。" class="headerlink" title="我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot + mybatis。"></a>我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot + mybatis。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<ul>
+<li>首先我们先引入maven依赖：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;pagehelper-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2.10&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后进行配置，我们可以自己在项目中新建一个config文件夹用于存放配置信息：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PageHelperConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> PageHelper <span class="title">createPaeHelper</span><span class="params">()</span></span>&#123;</span><br><span class="line">        PageHelper page= <span class="keyword">new</span> PageHelper();</span><br><span class="line">        <span class="keyword">return</span> page;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接着在controller层就可以直接调用了：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//mybatis分页查询</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/index/&#123;page&#125;/&#123;limit&#125;"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">index</span><span class="params">(@PathVariable(<span class="string">"page"</span>)</span> <span class="keyword">int</span> page, @<span class="title">PathVariable</span><span class="params">(<span class="string">"limit"</span>)</span> <span class="keyword">int</span> limit)</span>&#123;</span><br><span class="line"><span class="comment">//  创建Page对象，将page，limit参数传入，必须位于从数据库查询数据的语句之前，否则不生效</span></span><br><span class="line">        Page pages = PageHelper.startPage(page, limit);</span><br><span class="line"><span class="comment">//  ASC是根据id 正向排序，DESC是反向排序</span></span><br><span class="line">        PageHelper.orderBy(<span class="string">"userId ASC"</span>);</span><br><span class="line"><span class="comment">// 从数据库查询，这里返回的的allUser就已经分页成功了</span></span><br><span class="line">        List&lt;User&gt; allUser = userService.getAllUser();</span><br><span class="line"><span class="comment">// 获取查询记录总数，必须位于从数据库查询数据的语句之后，否则不生效</span></span><br><span class="line">        <span class="keyword">long</span> total = pages.getTotal();</span><br><span class="line"><span class="comment">// 自动以分页要求的信息</span></span><br><span class="line">        HashMap&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"code"</span>,<span class="number">0</span>);</span><br><span class="line">        map.put(<span class="string">"msg"</span>,<span class="string">"请求成功"</span>);</span><br><span class="line">        map.put(<span class="string">"data"</span>,allUser);</span><br><span class="line">        map.put(<span class="string">"count"</span>,total);</span><br><span class="line">        <span class="keyword">return</span>  map;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="以上就是本人在学习mybatis时的一些心得，在此记录一下，希望以后自己遇到这种问题可以借此参考。"><a href="#以上就是本人在学习mybatis时的一些心得，在此记录一下，希望以后自己遇到这种问题可以借此参考。" class="headerlink" title="以上就是本人在学习mybatis时的一些心得，在此记录一下，希望以后自己遇到这种问题可以借此参考。"></a>以上就是本人在学习mybatis时的一些心得，在此记录一下，希望以后自己遇到这种问题可以借此参考。</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件配置</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-mybatis - 分页插件</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/09/Mybatis%E4%BD%BF%E7%94%A8%E4%B9%8B%E5%A6%82%E4%BD%95%E5%88%86%E9%A1%B5%EF%BC%9F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-01%E8%83%8C%E5%8C%85/" class="archive-article-date">
-  	<time datetime="2019-12-05T04:51:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/27/Vue-js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue.js</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/05/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-01%E8%83%8C%E5%8C%85/">每日一题--01背包</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2020/08/09/Mybatis%E4%BD%BF%E7%94%A8%E4%B9%8B%E5%A6%82%E4%BD%95%E5%88%86%E9%A1%B5%EF%BC%9F/", 
+    sourceId: "Mybatis使用之如何分页？",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+  
+
+
+  
 
 
           </div>
@@ -286,8 +342,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

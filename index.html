@@ -143,6 +143,102 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mybatis使用之如何分页？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/09/Mybatis%E4%BD%BF%E7%94%A8%E4%B9%8B%E5%A6%82%E4%BD%95%E5%88%86%E9%A1%B5%EF%BC%9F/">Mybatis使用之如何分页？</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/09/Mybatis%E4%BD%BF%E7%94%A8%E4%B9%8B%E5%A6%82%E4%BD%95%E5%88%86%E9%A1%B5%EF%BC%9F/" class="archive-article-date">
+  	<time datetime="2020-08-09T02:40:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看"><a href="#在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看" class="headerlink" title="在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看"></a>在我们进行web开发时，查询数据库获得的信息条数往往不是一条两条，难以同一页面完全展示出来，这是我们便必须对数据进行分页展示，便于查看</h5><h5 id="在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路："><a href="#在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路：" class="headerlink" title="在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路："></a>在使用jpa框架时，我们可以很容易使用内置的分页插件，但是对于mybatis框架，想要实现分页，我们就不得不开始手动配置了。现提供以下三种思路：</h5><ol>
+<li>将所有数据查询查询出来，在controller控制层进行分页；</li>
+<li>利用mysal自带的分页查询功能；</li>
+<li>pagehelper插件。</li>
+</ol>
+<h5 id="我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot-mybatis。"><a href="#我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot-mybatis。" class="headerlink" title="我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot + mybatis。"></a>我们着重讲述第三种方法，第一二种方法很容易得以实现，我使用的框架是SprongBoot + mybatis。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>首先我们先引入maven依赖：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;pagehelper-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2.10&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后进行配置，我们可以自己在项目中新建一个config文件夹用于存放配置信息：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PageHelperConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> PageHelper <span class="title">createPaeHelper</span><span class="params">()</span></span>&#123;</span><br><span class="line">        PageHelper page= <span class="keyword">new</span> PageHelper();</span><br><span class="line">        <span class="keyword">return</span> page;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接着在controller层就可以直接调用了：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//mybatis分页查询</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/index/&#123;page&#125;/&#123;limit&#125;"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">index</span><span class="params">(@PathVariable(<span class="string">"page"</span>)</span> <span class="keyword">int</span> page, @<span class="title">PathVariable</span><span class="params">(<span class="string">"limit"</span>)</span> <span class="keyword">int</span> limit)</span>&#123;</span><br><span class="line"><span class="comment">//  创建Page对象，将page，limit参数传入，必须位于从数据库查询数据的语句之前，否则不生效</span></span><br><span class="line">        Page pages = PageHelper.startPage(page, limit);</span><br><span class="line"><span class="comment">//  ASC是根据id 正向排序，DESC是反向排序</span></span><br><span class="line">        PageHelper.orderBy(<span class="string">"userId ASC"</span>);</span><br><span class="line"><span class="comment">// 从数据库查询，这里返回的的allUser就已经分页成功了</span></span><br><span class="line">        List&lt;User&gt; allUser = userService.getAllUser();</span><br><span class="line"><span class="comment">// 获取查询记录总数，必须位于从数据库查询数据的语句之后，否则不生效</span></span><br><span class="line">        <span class="keyword">long</span> total = pages.getTotal();</span><br><span class="line"><span class="comment">// 自动以分页要求的信息</span></span><br><span class="line">        HashMap&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"code"</span>,<span class="number">0</span>);</span><br><span class="line">        map.put(<span class="string">"msg"</span>,<span class="string">"请求成功"</span>);</span><br><span class="line">        map.put(<span class="string">"data"</span>,allUser);</span><br><span class="line">        map.put(<span class="string">"count"</span>,total);</span><br><span class="line">        <span class="keyword">return</span>  map;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="以上就是本人在学习mybatis时的一些心得，在此记录一下，希望以后自己遇到这种问题可以借此参考。"><a href="#以上就是本人在学习mybatis时的一些心得，在此记录一下，希望以后自己遇到这种问题可以借此参考。" class="headerlink" title="以上就是本人在学习mybatis时的一些心得，在此记录一下，希望以后自己遇到这种问题可以借此参考。"></a>以上就是本人在学习mybatis时的一些心得，在此记录一下，希望以后自己遇到这种问题可以借此参考。</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-mybatis - 分页插件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/09/Mybatis%E4%BD%BF%E7%94%A8%E4%B9%8B%E5%A6%82%E4%BD%95%E5%88%86%E9%A1%B5%EF%BC%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Vue-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -861,88 +957,6 @@
 
 
   
-    <article id="post-每日一题-正方形的判定" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E5%88%A4%E5%AE%9A/">每日一题--正方形的判定</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E5%88%A4%E5%AE%9A/" class="archive-article-date">
-  	<time datetime="2019-11-17T01:32:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<blockquote>
-<p> 1.2018三大校赛题B-正方形的判断 (10分)<br>题目内容：<br>给定四个点的坐标, 问这四个点相连之后是否可以组成正方形.<br>输入描述：<br>第一行一个正整数N,表示测试数据组数,N&lt;=500<br>每组测试数据占一行,给出8个整数x1,y1,x2,y2,x3,y3,x4,y4. -1000000&lt;= x,y &lt;= 1000000<br>输出描述：<br>输出一个正整数, 表示N组测试数据中有多少组中的点可以组成正方形.<br>输入样例：<br>2<br>0 1 3 1 0 0 3 0<br>1 1 -1 1 -1 -1 1 -1<br>输出样例<br>1</p></blockquote>
-        
-          <a class="article-more-a" href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E5%88%A4%E5%AE%9A/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%AD%A3%E6%96%B9%E5%BD%A2%E7%9A%84%E5%88%A4%E5%AE%9A/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1101,6 +1115,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TensorFlow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-mybatis - 分页插件</a>
               </li>
             
             <div class="clearfix"></div>
