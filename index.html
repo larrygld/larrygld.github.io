@@ -169,15 +169,9 @@
 <p>docker stop + id ——————停止运行容器</p>
 <p>docker run -d -p 6379:6379 –name myredis docker.io/redis—————— -d 后台运行 -p暴露端口 容器6379到虚拟机6379  –name 定义名称 最后是镜像名称</p>
 <p>docker rm myredis——————————移除某个运行的容器</p>
-<p>docker run -d –name mysql01 -e MYSQL_ROOT_PASSWORD=root  -p 3306:3306 docker.io/mysql  启动mysql</p>
-<p>docker run -d -p 5672:5672 -p 15672:15672 –name myrabitmq 92c743b6c055    启动rabitmq</p>
-<p><a href="http://192.168.42.130:15672/" target="_blank" rel="noopener">http://192.168.42.130:15672/</a>     ——————rabbitmq管理页面访问地址</p>
-<p>docker run -e ES_JAVA_OPTS=”-Xms256m -Xmx256m” -d -p 9201:9200 -p 9301:9300 –name ES01    5acf0e8da90b    ————————elasticSearch启动需要限制内存大小  映射前的为映射到的虚拟机端口</p>
-<p><a href="http://192.168.42.130:9200/" target="_blank" rel="noopener">http://192.168.42.130:9200/</a> ————访问elasticsearch</p>
-<p><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_retrieving_a_document.html" target="_blank" rel="noopener">https://www.elastic.co/guide/cn/elasticsearch/guide/current/_retrieving_a_document.html</a> –官方文档</p>
-<p>docker run -e ES_JAVA_OPTS=”-Xms512m -Xmx512m” -e “discovery.type=single-node” -d -p 9200:9200 -p 9300:9300 –name ES01 f29a1ee41030  ———— elastic7.x版本启动</p>
-<p><a href="http://192.168.42.131:9200/ctgu/_doc/2————高版本没了type概念" target="_blank" rel="noopener">http://192.168.42.131:9200/ctgu/_doc/2————高版本没了type概念</a></p>
-
+        
+          <a class="article-more-a" href="/2021/01/07/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/#more">more >></a>
+        
       
 
       

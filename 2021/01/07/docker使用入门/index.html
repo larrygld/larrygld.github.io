@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Larry的博客">
 <meta property="og:description" content="docker images——————查看所有下载镜像 docker ps——————查看正在运行的镜像 docker rmi f29a1ee41030——————删除镜像 docker stop + id ——————停止运行容器 docker run -d -p 6379:6379 –name myredis docker.io&#x2F;redis—————— -d 后台运行 -p暴露端口 容器637">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-01-11T14:28:16.527Z">
+<meta property="og:updated_time" content="2021-01-15T12:27:26.857Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -170,6 +170,8 @@
 <p>docker stop + id ——————停止运行容器</p>
 <p>docker run -d -p 6379:6379 –name myredis docker.io/redis—————— -d 后台运行 -p暴露端口 容器6379到虚拟机6379  –name 定义名称 最后是镜像名称</p>
 <p>docker rm myredis——————————移除某个运行的容器</p>
+<a id="more"></a>>
+
 <p>docker run -d –name mysql01 -e MYSQL_ROOT_PASSWORD=root  -p 3306:3306 docker.io/mysql  启动mysql</p>
 <p>docker run -d -p 5672:5672 -p 15672:15672 –name myrabitmq 92c743b6c055    启动rabitmq</p>
 <p><a href="http://192.168.42.130:15672/" target="_blank" rel="noopener">http://192.168.42.130:15672/</a>     ——————rabbitmq管理页面访问地址</p>
