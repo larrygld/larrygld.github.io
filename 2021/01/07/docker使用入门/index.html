@@ -6,17 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>springMVC 中文乱码问题解决（idea） | Larry的博客</title>
+  <title>docker使用入门 | Larry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.看jsp的编码格式是否为utf-8；2.web.xml中增加过滤器：12345678910111213141516&amp;lt;filter&amp;gt;    &amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;&#x2F;filter-name&amp;gt;    &amp;lt;filter-class&amp;gt;org.springframework.web.filter.Charac">
-<meta name="keywords" content="心得,java框架">
+  <meta name="description" content="docker images——————查看所有下载镜像 docker ps——————查看正在运行的镜像 docker rmi f29a1ee41030——————删除镜像 docker stop + id ——————停止运行容器 docker run -d -p 6379:6379 –name myredis docker.io&#x2F;redis—————— -d 后台运行 -p暴露端口 容器637">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springMVC 中文乱码问题解决（idea）">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;21&#x2F;%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2&#x2F;index.html">
+<meta property="og:title" content="docker使用入门">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;01&#x2F;07&#x2F;docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8&#x2F;index.html">
 <meta property="og:site_name" content="Larry的博客">
-<meta property="og:description" content="1.看jsp的编码格式是否为utf-8；2.web.xml中增加过滤器：12345678910111213141516&amp;lt;filter&amp;gt;    &amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;&#x2F;filter-name&amp;gt;    &amp;lt;filter-class&amp;gt;org.springframework.web.filter.Charac">
+<meta property="og:description" content="docker images——————查看所有下载镜像 docker ps——————查看正在运行的镜像 docker rmi f29a1ee41030——————删除镜像 docker stop + id ——————停止运行容器 docker run -d -p 6379:6379 –name myredis docker.io&#x2F;redis—————— -d 后台运行 -p暴露端口 容器637">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-21T15:28:33.673Z">
+<meta property="og:updated_time" content="2021-01-11T14:28:16.527Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Larry的博客" type="application/atom+xml">
@@ -145,30 +144,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-docker使用入门" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      springMVC 中文乱码问题解决（idea）
+      docker使用入门
     </h1>
   
 
         
-        <a href="/2019/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2019-10-21T09:18:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
+        <a href="/2021/01/07/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/" class="archive-article-date">
+  	<time datetime="2021-01-07T05:50:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="1-看jsp的编码格式是否为utf-8；"><a href="#1-看jsp的编码格式是否为utf-8；" class="headerlink" title="1.看jsp的编码格式是否为utf-8；"></a>1.看jsp的编码格式是否为utf-8；</h6><h6 id="2-web-xml中增加过滤器："><a href="#2-web-xml中增加过滤器：" class="headerlink" title="2.web.xml中增加过滤器："></a>2.web.xml中增加过滤器：</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>forceEncoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="3-配置Tomcat启动参数："><a href="#3-配置Tomcat启动参数：" class="headerlink" title="3.配置Tomcat启动参数："></a>3.配置Tomcat启动参数：</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding=UTF-8</span><br></pre></td></tr></table></figure>
-
+        <p>docker images——————查看所有下载镜像</p>
+<p>docker ps——————查看正在运行的镜像</p>
+<p>docker rmi f29a1ee41030——————删除镜像</p>
+<p>docker stop + id ——————停止运行容器</p>
+<p>docker run -d -p 6379:6379 –name myredis docker.io/redis—————— -d 后台运行 -p暴露端口 容器6379到虚拟机6379  –name 定义名称 最后是镜像名称</p>
+<p>docker rm myredis——————————移除某个运行的容器</p>
+<p>docker run -d –name mysql01 -e MYSQL_ROOT_PASSWORD=root  -p 3306:3306 docker.io/mysql  启动mysql</p>
+<p>docker run -d -p 5672:5672 -p 15672:15672 –name myrabitmq 92c743b6c055    启动rabitmq</p>
+<p><a href="http://192.168.42.130:15672/" target="_blank" rel="noopener">http://192.168.42.130:15672/</a>     ——————rabbitmq管理页面访问地址</p>
+<p>docker run -e ES_JAVA_OPTS=”-Xms256m -Xmx256m” -d -p 9201:9200 -p 9301:9300 –name ES01    5acf0e8da90b    ————————elasticSearch启动需要限制内存大小  映射前的为映射到的虚拟机端口</p>
+<p><a href="http://192.168.42.130:9200/" target="_blank" rel="noopener">http://192.168.42.130:9200/</a> ————访问elasticsearch</p>
+<p><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_retrieving_a_document.html" target="_blank" rel="noopener">https://www.elastic.co/guide/cn/elasticsearch/guide/current/_retrieving_a_document.html</a> –官方文档</p>
+<p>docker run -e ES_JAVA_OPTS=”-Xms512m -Xmx512m” -e “discovery.type=single-node” -d -p 9200:9200 -p 9300:9300 –name ES01 f29a1ee41030  ———— elastic7.x版本启动</p>
+<p><a href="http://192.168.42.131:9200/ctgu/_doc/2————高版本没了type概念" target="_blank" rel="noopener">http://192.168.42.131:9200/ctgu/_doc/2————高版本没了type概念</a></p>
 
       
 
@@ -177,21 +186,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心得</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -242,7 +236,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/07/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -256,15 +250,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/22/typroa%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Typora基础使用及常用快捷键
-        
-      </div>
-    </a>
   
+    <a href="/2020/08/09/Mybatis%E4%BD%BF%E7%94%A8%E4%B9%8B%E5%A6%82%E4%BD%95%E5%88%86%E9%A1%B5%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mybatis使用之如何分页？</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -293,8 +283,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/", 
-    sourceId: "第一篇博客",
+    url: "http://yoursite.com/2021/01/07/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/", 
+    sourceId: "docker使用入门",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };

@@ -143,6 +143,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-docker使用入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/07/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/">docker使用入门</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/07/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/" class="archive-article-date">
+  	<time datetime="2021-01-07T05:50:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>docker images——————查看所有下载镜像</p>
+<p>docker ps——————查看正在运行的镜像</p>
+<p>docker rmi f29a1ee41030——————删除镜像</p>
+<p>docker stop + id ——————停止运行容器</p>
+<p>docker run -d -p 6379:6379 –name myredis docker.io/redis—————— -d 后台运行 -p暴露端口 容器6379到虚拟机6379  –name 定义名称 最后是镜像名称</p>
+<p>docker rm myredis——————————移除某个运行的容器</p>
+<p>docker run -d –name mysql01 -e MYSQL_ROOT_PASSWORD=root  -p 3306:3306 docker.io/mysql  启动mysql</p>
+<p>docker run -d -p 5672:5672 -p 15672:15672 –name myrabitmq 92c743b6c055    启动rabitmq</p>
+<p><a href="http://192.168.42.130:15672/" target="_blank" rel="noopener">http://192.168.42.130:15672/</a>     ——————rabbitmq管理页面访问地址</p>
+<p>docker run -e ES_JAVA_OPTS=”-Xms256m -Xmx256m” -d -p 9201:9200 -p 9301:9300 –name ES01    5acf0e8da90b    ————————elasticSearch启动需要限制内存大小  映射前的为映射到的虚拟机端口</p>
+<p><a href="http://192.168.42.130:9200/" target="_blank" rel="noopener">http://192.168.42.130:9200/</a> ————访问elasticsearch</p>
+<p><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_retrieving_a_document.html" target="_blank" rel="noopener">https://www.elastic.co/guide/cn/elasticsearch/guide/current/_retrieving_a_document.html</a> –官方文档</p>
+<p>docker run -e ES_JAVA_OPTS=”-Xms512m -Xmx512m” -e “discovery.type=single-node” -d -p 9200:9200 -p 9300:9300 –name ES01 f29a1ee41030  ———— elastic7.x版本启动</p>
+<p><a href="http://192.168.42.131:9200/ctgu/_doc/2————高版本没了type概念" target="_blank" rel="noopener">http://192.168.42.131:9200/ctgu/_doc/2————高版本没了type概念</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/07/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Mybatis使用之如何分页？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -856,92 +932,6 @@
 
 
   
-    <article id="post-每日一题-分苹果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%88%86%E8%8B%B9%E6%9E%9C/">每日一题--分苹果</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%88%86%E8%8B%B9%E6%9E%9C/" class="archive-article-date">
-  	<time datetime="2019-11-17T02:22:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<blockquote>
-<p> 64.分苹果 (15分)<br>C时间限制：3000 毫秒 |  C内存限制：3000 Kb<br>题目内容：<br>把M个同样的苹果放在N个同样的盘子里，允许有的盘子空着不放，问共有多少种不同的分法？M, N为自然数。<br>说明：如有7个苹果,3个盘子，则(5, 1, 1)和(1, 5, 1)和(1, 1, 5)都是同一种分法。<br>输入描述<br>第一行一个整数表示数据的组数（多组数据），对于每组数据第一行是苹果个数M (1 ≤ m ≤ 100) ，<br>第二行是盘子个数N(1 ≤n ≤100)。<br>输出描述<br>每组数据输出一行,放苹果的方法个数。<br>输入样例<br>1<br>3<br>2<br>输出样例<br>2</p></blockquote>
-        
-          <a class="article-more-a" href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%88%86%E8%8B%B9%E6%9E%9C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日一题</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/17/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%88%86%E8%8B%B9%E6%9E%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -956,7 +946,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 Larry
+    		&copy; 2021 Larry
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1039,6 +1029,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Sqlite</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件配置</a>
               </li>
              
@@ -1051,15 +1053,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Sqlite</a>
+                <a href="javascript:void(0)" class="js-tag color1">-mybatis - 分页插件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1100,10 +1094,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">TensorFlow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-mybatis - 分页插件</a>
               </li>
             
             <div class="clearfix"></div>
